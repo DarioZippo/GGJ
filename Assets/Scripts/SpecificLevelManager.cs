@@ -1,11 +1,22 @@
 using Pearl;
 using Pearl.Input;
-using UnityEngine;
 
 namespace Game
 {
     public class SpecificLevelManager : LevelManager
     {
+        public static bool GetIstance(out SpecificLevelManager result)
+        {
+            return Singleton<SpecificLevelManager>.GetIstance(out result);
+        }
+
+        public static SpecificLevelManager GetSpecificIstance()
+        {
+            Singleton<SpecificLevelManager>.GetIstance(out SpecificLevelManager result);
+            return result;
+        }
+
+
         protected override void PearlAwake()
         {
             base.PearlAwake();
@@ -16,8 +27,10 @@ namespace Game
             base.PearlStart();
 
             InputManager.SetSwitchMap("Gameplay", true);
+        }
 
-            Debug.Log("ciao");
+        private void Update()
+        {
         }
 
         protected override void PauseInternal()
