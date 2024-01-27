@@ -8,5 +8,8 @@ namespace Game
 {
     public class SpecificGameManager : GameManager
     {
+        public void NewRoad(){
+            Debug.Log("Triggered");
+        }
     }
 }
