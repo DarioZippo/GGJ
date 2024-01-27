@@ -8,6 +8,7 @@ namespace Game
 {
     public class SpecificLevelManager : LevelManager
     {
+        public Transform[] boundaries;
         /*int roadCounter = 0;
 
         void Awake(){
