@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752066251860642637}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.32845452, z: 0, w: 0.9445199}
-  m_LocalPosition: {x: 24.02, y: 0, z: 15.36}
+  m_LocalRotation: {x: 0, y: 0.47101188, z: 0, w: 0.88212687}
+  m_LocalPosition: {x: 23.961, y: 0, z: 15.368}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7548873458005259406}
-  m_LocalEulerAnglesHint: {x: 0, y: 38.35, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 56.2, z: 0}
 --- !u!1 &2406488824609725672
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1487032859303536719}
   - component: {fileID: 1425117627642110464}
   m_Layer: 0
-  m_Name: Road 2
+  m_Name: Road 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.640319, y: 0, z: 21.51035}
-  m_LocalScale: {x: 2.15, y: 1, z: 1.8}
+  m_LocalScale: {x: 6.04, y: 1, z: 6.14}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8575304824288856178}
@@ -104,76 +104,36 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -1.1034586
+        z: -2.1338115
       TangentOut:
         x: 0
         y: 0
-        z: 1.1034586
+        z: 2.1338115
       Rotation:
         value:
           x: 0
-          y: 0.4112237
+          y: 0.47822446
           z: 0
-          w: 0.9115345
+          w: 0.87823766
     - Position:
-        x: 8.27251
+        x: 17.92379
         y: 0
-        z: 7.30258
+        z: 11.578119
       TangentIn:
         x: -0
         y: -0
-        z: -3.2263277
+        z: -2.1338115
       TangentOut:
         x: 0
         y: 0
-        z: 2.8594441
+        z: 2.1338115
       Rotation:
         value:
           x: 0
-          y: 0.57063395
+          y: 0.47822446
           z: 0
-          w: 0.8212046
-    - Position:
-        x: 16.939682
-        y: 0
-        z: 7.20965
-      TangentIn:
-        x: -0
-        y: -0
-        z: -2.7595148
-      TangentOut:
-        x: 0
-        y: 0
-        z: 3.073318
-      Rotation:
-        value:
-          x: 0
-          y: 0.5418502
-          z: 0
-          w: 0.8404751
-    - Position:
-        x: 23.939682
-        y: 0
-        z: 15.369652
-      TangentIn:
-        x: -0
-        y: -0
-        z: -1.0751076
-      TangentOut:
-        x: 0
-        y: 0
-        z: 1.0751076
-      Rotation:
-        value:
-          x: 0
-          y: 0.34713545
-          z: 0
-          w: 0.937815
+          w: 0.87823766
     m_MetaData:
-    - Mode: 0
-      Tension: 0.5
-    - Mode: 0
-      Tension: 0.5
     - Mode: 0
       Tension: 0.5
     - Mode: 0
@@ -313,8 +273,8 @@ Transform:
   m_GameObject: {fileID: 5127161134157802161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.35633036, z: 0, w: 0.9343601}
-  m_LocalPosition: {x: 5.49, y: 7.35, z: 5.13}
-  m_LocalScale: {x: 1, y: 10, z: 8.12}
+  m_LocalPosition: {x: 6.80226, y: 7.35, z: 3.83727}
+  m_LocalScale: {x: 1.42654, y: 10, z: 11.242303}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7548873458005259406}

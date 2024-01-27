@@ -17,7 +17,7 @@ namespace Game
         void Update()
         {
             Vector3 aux = destination.position - delta;
-            transform.position = new Vector3(transform.position.x, aux.y, aux.z);
+            transform.position = new Vector3(destination.position.x, aux.y, aux.z);
         }
     }
 }
