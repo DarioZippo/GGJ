@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Pearl;
-using Pearl.Events;
 using Pearl.Input;
+using UnityEngine;
 
 namespace Game
 {
@@ -17,6 +14,10 @@ namespace Game
         protected override void PearlStart()
         {
             base.PearlStart();
+
+            InputManager.SetSwitchMap("Gameplay", true);
+
+            Debug.Log("ciao");
         }
 
         protected override void PauseInternal()
