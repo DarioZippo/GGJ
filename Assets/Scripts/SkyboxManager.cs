@@ -7,12 +7,15 @@ public class SkyboxManager : MonoBehaviour
     public Camera cam;
     public Vector2 timeRandom;
 
-    private Timer timer = new Timer();
+    private readonly Timer timer = new Timer();
 
     // Start is called before the first frame update
     void Start()
     {
-        cam.backgroundColor = ColorExtend.RandomColor();
+        Color color = ColorExtend.NewColorHSV(1, 1, 1);
+        color = color.SetHUE(Random.value, ChangeTypeEnum.Setting);
+        cam.backgroundColor = color;
+
         timer.ResetOn(timeRandom);
     }
 
@@ -21,7 +24,12 @@ public class SkyboxManager : MonoBehaviour
     {
         if (timer.IsFinish())
         {
-            cam.backgroundColor = ColorExtend.RandomColor();
+            Color color = ColorExtend.NewColorHSV(1, 1, 1);
+            color = color.SetHUE(Random.value, ChangeTypeEnum.Setting);
+            cam.backgroundColor = color;
+
+            Debug.Log(color);
+
             timer.ResetOn(timeRandom);
         }
     }

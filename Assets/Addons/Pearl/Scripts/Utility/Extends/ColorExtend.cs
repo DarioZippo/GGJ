@@ -152,12 +152,6 @@ namespace Pearl
 
     public static class ColorExtend
     {
-        public static Color RandomColor()
-        {
-            ColorEnum randomColor = EnumExtend.GetRandom<ColorEnum>();
-            return GetColor(randomColor);
-        }
-
         public static Color GetColor(ColorEnum color, float alpha = 1)
         {
             byte a = (byte)(byte.MaxValue * Mathf.Clamp01(alpha));
@@ -311,12 +305,12 @@ namespace Pearl
             return new Color(255, 255, 255);
         }
 
-        public static Color NewColor(int r, int g, int b, float alpha = 1)
+        public static Color NewColor255(int r, int g, int b, float alpha = 1)
         {
             return new Color(r / 255f, g / 255f, b / 255f, alpha);
         }
 
-        public static Color GetColor(string hexValues, bool convert01 = true, float transparent = 1)
+        public static Color GetColor(string hexValues, float alpha = 1)
         {
             if (hexValues == null)
             {
@@ -325,7 +319,7 @@ namespace Pearl
 
             hexValues.Replace("#", "");
             hexValues.Replace(" ", "");
-            transparent = Mathf.Clamp01(transparent);
+            alpha = Mathf.Clamp01(alpha);
             string hex;
             if (hexValues.Length == 6)
             {
@@ -338,55 +332,27 @@ namespace Pearl
                 hex = hexValues.Substring(4, 2);
                 int value3 = Convert.ToInt32(hex, 16);
 
-                Color color;
-
-                if (convert01)
-                {
-                    color = new Color(value1 / 255f, value2 / 255f, value3 / 255f, transparent);
-                }
-                else
-                {
-                    color = new Color(value1, value2, value3, transparent);
-                }
-
-                return color;
+                return NewColor255(value1, value2, value3, alpha); ;
             }
             return default;
         }
 
-        /// <summary>
-        /// Returns a random color between the two min/max specified
-        /// </summary>
-        /// <param name="color"></param>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        /// <returns></returns>
-        public static Color RandomColor(this Color color, Color min, Color max)
+        public static Color RandomColor(bool useEnum = false)
         {
-            Color c = new Color()
+            Color color;
+            if (useEnum)
             {
-                r = UnityEngine.Random.Range(min.r, max.r),
-                g = UnityEngine.Random.Range(min.g, max.g),
-                b = UnityEngine.Random.Range(min.b, max.b),
-                a = UnityEngine.Random.Range(min.a, max.a)
-            };
-
-            return c;
+                ColorEnum randomColor = EnumExtend.GetRandom<ColorEnum>();
+                color = GetColor(randomColor);
+            }
+            else
+            {
+                color = new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value, 1);
+            }
+            return color;
         }
 
-        /// <summary>
-        /// Returns a random color between the two min/max specified
-        /// </summary>
-        /// <param name="color"></param>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
-        /// <returns></returns>
-        public static Color RandomColor(this Color color)
-        {
-            return RandomColor(color, new Color(0, 0, 0), new Color(255, 255, 255));
-        }
-
-        public static Color SetHUE(Color colorRGB, float H, in ChangeTypeEnum type)
+        public static Color SetHUE(this Color colorRGB, float H, in ChangeTypeEnum type)
         {
             Color.RGBToHSV(colorRGB, out var oldH, out var oldS, out var oldV);
 
@@ -396,7 +362,7 @@ namespace Pearl
             return Color.HSVToRGB(H, oldS, oldV);
         }
 
-        public static Color SetSaturation(Color colorRGB, float S, in ChangeTypeEnum type)
+        public static Color SetSaturation(this Color colorRGB, float S, in ChangeTypeEnum type)
         {
             Color.RGBToHSV(colorRGB, out var oldH, out var oldS, out var oldV);
 
@@ -406,14 +372,20 @@ namespace Pearl
             return Color.HSVToRGB(oldH, S, oldV);
         }
 
-        public static Color SetValue(Color colorRGB, float V, in ChangeTypeEnum type)
+        public static Color SetValue(this Color colorRGB, float V, in ChangeTypeEnum type)
         {
             Color.RGBToHSV(colorRGB, out var oldH, out var oldS, out var oldV);
-
             V = type == ChangeTypeEnum.Modify ? oldV + V : V;
             V = Mathf.Clamp01(V);
 
             return Color.HSVToRGB(oldH, oldS, V);
+        }
+
+        public static Color NewColorHSV(float H, float S, float V, float alpha = 1)
+        {
+            Color color = Color.HSVToRGB(H, S, V);
+            color.a = alpha;
+            return color;
         }
 
         public static Color GetcCmplementary(Color colorRGB)
