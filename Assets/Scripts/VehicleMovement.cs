@@ -24,7 +24,10 @@ namespace Game
         void Update()
         {
             float move = InputManager.GetAxis("Movement");
-            simpleBikeManager.UpdateControl(move);
+            if (simpleBikeManager != null)
+            {
+                simpleBikeManager.UpdateControl(move);
+            }
         }
 
         void HandleAcceleration()
