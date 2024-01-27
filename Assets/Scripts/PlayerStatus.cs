@@ -19,6 +19,7 @@ namespace Game
 
         public void OnBean(GameObject bean)
         {
+            GameObject.Destroy(bean);
             currentGas = Math.Min(currentGas + gasForBean, maxGas);
         }
 
