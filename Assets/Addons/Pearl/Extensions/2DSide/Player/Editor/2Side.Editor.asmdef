@@ -1,0 +1,18 @@
+{
+    "name": "2Side.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5cb00550759bf7e4598e6884a7adf58f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

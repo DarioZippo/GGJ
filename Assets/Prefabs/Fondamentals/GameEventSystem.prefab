@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4016931258955008836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9172869825223447392}
+  - component: {fileID: 6298955894756250935}
+  - component: {fileID: 1347188597248323315}
+  - component: {fileID: 6216251689408823803}
+  - component: {fileID: 5922457268913363232}
+  m_Layer: 0
+  m_Name: GameEventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &9172869825223447392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016931258955008836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6298955894756250935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016931258955008836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce97b7bebc73b1439fe73a8cdc92904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyLoad: 1
+  isUnique: 1
+--- !u!114 &1347188597248323315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016931258955008836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19f41075b11aa84f97e891c32d89a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerFocus: 0
+--- !u!114 &6216251689408823803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016931258955008836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &5922457268913363232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016931258955008836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_PointAction: {fileID: -4239363459623670263, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_MoveAction: {fileID: 1710095244931518767, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_SubmitAction: {fileID: 345444497003156170, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_CancelAction: {fileID: 692082334866515930, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_LeftClickAction: {fileID: 1278948298640216531, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_MiddleClickAction: {fileID: -1277113719497952284, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_RightClickAction: {fileID: 8389370398445734058, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_ScrollWheelAction: {fileID: 7632356477396829516, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6206201301220505135, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 6581229473570759918, guid: abe59a72192a1924ea0341c10a2c4154, type: 3}
+  m_DeselectOnBackgroundClick: 0
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0

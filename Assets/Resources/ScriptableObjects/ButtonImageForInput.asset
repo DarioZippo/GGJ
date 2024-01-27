@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d80f767fd54174783804462d20ebcf, type: 3}
+  m_Name: ButtonImageForInput
+  m_EditorClassIdentifier: 
+  buttonImageForInputEvent:
+    m_keys:
+    - Confirm
+    m_values:
+    - imageForDevice:
+        m_keys: 0100000002000000030000000400000005000000
+        m_values:
+        - {fileID: 21300000, guid: ced7ab74b8485484cad8dd0279c48bb7, type: 3}
+        - {fileID: 21300000, guid: ced7ab74b8485484cad8dd0279c48bb7, type: 3}
+        - {fileID: 21300000, guid: ced7ab74b8485484cad8dd0279c48bb7, type: 3}
+        - {fileID: 21300000, guid: ced7ab74b8485484cad8dd0279c48bb7, type: 3}
+        - {fileID: 21300000, guid: ced7ab74b8485484cad8dd0279c48bb7, type: 3}

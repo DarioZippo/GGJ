@@ -1,0 +1,266 @@
+﻿using Pearl.Events;
+using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Pearl
+{
+    public class PearlBehaviour : MonoBehaviour
+    {
+        #region Private Fields
+        protected bool _useStart = false;
+        protected bool _useAwake = false;
+        #endregion
+
+        #region Event
+        public event Action StartHandler;
+        public event Action DestroyHandler;
+        public event Action<PearlBehaviour> DisableHandler;
+        public event Action<PearlBehaviour> EnableHandler;
+        #endregion
+
+        #region Unity Callbacks
+        private void Awake()
+        {
+            if (!_useAwake)
+            {
+                _useAwake = true;
+                PearlAwake();
+            }
+        }
+
+        protected virtual void PearlAwake()
+        {
+        }
+
+        private void Start()
+        {
+            if (!_useStart)
+            {
+                _useStart = true;
+                StartHandler?.Invoke();
+                PearlStart();
+                OnEnableAfterStart();
+            }
+        }
+
+        protected virtual void PearlStart()
+        {
+        }
+
+        protected virtual void OnEnable()
+        {
+            EnableHandler?.Invoke(this);
+            if (_useStart)
+            {
+                OnEnableAfterStart();
+            }
+        }
+
+        protected virtual void OnDisable()
+        {
+            DisableHandler?.Invoke(this);
+        }
+
+        protected virtual void OnDestroy()
+        {
+            DestroyHandler?.Invoke();
+        }
+
+        protected virtual void OnEnableAfterStart()
+        {
+        }
+
+        protected virtual void OnApplicationPause(bool pause)
+        {
+            OnApplicationInterrupt(pause);
+        }
+
+        protected virtual void OnApplicationFocus(bool hasFocus)
+        {
+            OnApplicationInterrupt(!hasFocus);
+        }
+
+        protected virtual void OnApplicationInterrupt(bool interrupt)
+        {
+
+        }
+
+#if UNITY_EDITOR
+        protected virtual void OnValidate()
+        {
+            UnityEditor.EditorApplication.delayCall += OnValidatePrivate;
+        }
+
+        protected virtual void OnValidateOnlyInPlaying()
+        {
+
+        }
+
+        private void OnValidatePrivate()
+        {
+            UnityEditor.EditorApplication.delayCall -= OnValidatePrivate;
+
+            if (this == null)
+            {
+                return;
+            }
+
+            if (Application.isPlaying)
+            {
+                OnValidateOnlyInPlaying();
+            }
+        }
+
+#endif
+
+        #endregion
+
+        #region Public Methods
+        public void ForceStart()
+        {
+            Start();
+        }
+
+        public void ForceAwake()
+        {
+            Awake();
+        }
+
+        #region Event
+        public void AddAction(string constantStrings, Action action, DeleteGameObjectEnum onDestroy, bool solo = false)
+        {
+            PearlEventsManager.AddAction(constantStrings, action, solo);
+
+            if (onDestroy == DeleteGameObjectEnum.Destroy)
+            {
+                DestroyHandler += () => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+            else if (onDestroy == DeleteGameObjectEnum.Disable)
+            {
+                EnableHandler += (PearlBehaviour @this) => PearlEventsManager.AddAction(constantStrings, action);
+                DisableHandler += (PearlBehaviour @this) => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+        }
+
+        public void AddAction<T>(string constantStrings, Action<T> action, DeleteGameObjectEnum onDestroy, bool solo = false)
+        {
+            PearlEventsManager.AddAction(constantStrings, action, solo);
+
+            if (onDestroy == DeleteGameObjectEnum.Destroy)
+            {
+                DestroyHandler += () => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+            else if (onDestroy == DeleteGameObjectEnum.Disable)
+            {
+                EnableHandler += (PearlBehaviour @this) => PearlEventsManager.AddAction(constantStrings, action);
+                DisableHandler += (PearlBehaviour @this) => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+        }
+
+        public void AddAction<T, F>(string constantStrings, Action<T, F> action, DeleteGameObjectEnum onDestroy, bool solo = false)
+        {
+            PearlEventsManager.AddAction(constantStrings, action, solo);
+
+            if (onDestroy == DeleteGameObjectEnum.Destroy)
+            {
+                DestroyHandler += () => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+            else if (onDestroy == DeleteGameObjectEnum.Disable)
+            {
+                EnableHandler += (PearlBehaviour @this) => PearlEventsManager.AddAction(constantStrings, action);
+                DisableHandler += (PearlBehaviour @this) => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+        }
+
+        public void AddAction<T, F, Z>(string constantStrings, Action<T, F, Z> action, DeleteGameObjectEnum onDestroy, bool solo = false)
+        {
+            PearlEventsManager.AddAction(constantStrings, action, solo);
+
+            if (onDestroy == DeleteGameObjectEnum.Destroy)
+            {
+                DestroyHandler += () => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+            else if (onDestroy == DeleteGameObjectEnum.Disable)
+            {
+                EnableHandler += (PearlBehaviour @this) => PearlEventsManager.AddAction(constantStrings, action);
+                DisableHandler += (PearlBehaviour @this) => PearlEventsManager.RemoveAction(constantStrings, action);
+            }
+        }
+
+        public void AddUnityAction(UnityEvent unityEvent, UnityAction action, DeleteGameObjectEnum onDestroy)
+        {
+            if (unityEvent != null && action != null)
+            {
+                unityEvent.AddListener(action);
+
+                if (onDestroy == DeleteGameObjectEnum.Destroy)
+                {
+                    DestroyHandler += () => unityEvent.RemoveListener(action);
+                }
+                else if (onDestroy == DeleteGameObjectEnum.Disable)
+                {
+                    EnableHandler += (PearlBehaviour @this) => unityEvent.AddListener(action);
+                    DisableHandler += (PearlBehaviour @this) => unityEvent.RemoveListener(action);
+                }
+            }
+        }
+
+        public void AddUnityAction<T>(UnityEvent<T> unityEvent, UnityAction<T> action, DeleteGameObjectEnum onDestroy)
+        {
+            if (unityEvent != null && action != null)
+            {
+                unityEvent.AddListener(action);
+
+                if (onDestroy == DeleteGameObjectEnum.Destroy)
+                {
+                    DestroyHandler += () => unityEvent.RemoveListener(action);
+                }
+                else if (onDestroy == DeleteGameObjectEnum.Disable)
+                {
+                    EnableHandler += (PearlBehaviour @this) => unityEvent.AddListener(action);
+                    DisableHandler += (PearlBehaviour @this) => unityEvent.RemoveListener(action);
+                }
+            }
+        }
+
+        public void AddUnityAction<T, F>(UnityEvent<T, F> unityEvent, UnityAction<T, F> action, DeleteGameObjectEnum onDestroy)
+        {
+            if (unityEvent != null && action != null)
+            {
+                unityEvent.AddListener(action);
+
+                if (onDestroy == DeleteGameObjectEnum.Destroy)
+                {
+                    DestroyHandler += () => unityEvent.RemoveListener(action);
+                }
+                else if (onDestroy == DeleteGameObjectEnum.Disable)
+                {
+                    EnableHandler += (PearlBehaviour @this) => unityEvent.AddListener(action);
+                    DisableHandler += (PearlBehaviour @this) => unityEvent.RemoveListener(action);
+                }
+            }
+        }
+
+        public void AddUnityAction<T, F, Z>(UnityEvent<T, F, Z> unityEvent, UnityAction<T, F, Z> action, DeleteGameObjectEnum onDestroy)
+        {
+            if (unityEvent != null && action != null)
+            {
+                unityEvent.AddListener(action);
+
+                if (onDestroy == DeleteGameObjectEnum.Destroy)
+                {
+                    DestroyHandler += () => unityEvent.RemoveListener(action);
+                }
+                else if (onDestroy == DeleteGameObjectEnum.Disable)
+                {
+                    EnableHandler += (PearlBehaviour @this) => unityEvent.AddListener(action);
+                    DisableHandler += (PearlBehaviour @this) => unityEvent.RemoveListener(action);
+                }
+            }
+        }
+        #endregion
+
+        #endregion
+    }
+}
