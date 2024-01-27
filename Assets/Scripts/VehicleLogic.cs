@@ -9,7 +9,7 @@ namespace Game
 
         Rigidbody body;
         private float horizontal;
-        private float velocity;
+        public float velocity;
 
         public void Start()
         {
