@@ -1,13 +1,10 @@
 using Pearl;
-using Pearl.Events;
 using Pearl.Input;
 
 namespace Game
 {
     public class SpecificLevelManager : LevelManager
     {
-        public float currentGas = 0;
-
         public static bool GetIstance(out SpecificLevelManager result)
         {
             return Singleton<SpecificLevelManager>.GetIstance(out result);
@@ -23,8 +20,6 @@ namespace Game
         protected override void PearlAwake()
         {
             base.PearlAwake();
-
-            currentGas = 0;
         }
 
         protected override void PearlStart()
@@ -36,7 +31,6 @@ namespace Game
 
         private void Update()
         {
-            PearlEventsManager.CallEvent("OnGas", currentGas);
         }
 
         protected override void PauseInternal()
