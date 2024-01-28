@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8800113147531567267}
   - component: {fileID: 1647524561081750752}
   - component: {fileID: 475166459890549032}
+  - component: {fileID: 2494209607488153681}
   m_Layer: 0
   m_Name: Fagiolo_Borlotto
   m_TagString: Bean
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495098133804367234}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 2.02, y: 2.01, z: -21.15}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 300, y: 300, z: 300}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &8800113147531567267
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -107,3 +108,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0029944663, y: 0.0031486405, z: 0.0040020314}
   m_Center: {x: 0.00008255092, y: -0.00015030437, z: -0.000047808273}
+--- !u!114 &2494209607488153681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495098133804367234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a870a33001d05b4ab77703f6aba393a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container:
+    find: 0
+    reference: {fileID: 3638669414083737519}
+    typeControl: 0
+    usePrefab: 0
+    prefabName: {fileID: 0}
+    isEqualCountTags: 0
+    keyForFind: 
+    useRoot: 0
+    includeInactiveChildren: 0
+    findRoot: 0
+    rootTransform: {fileID: 0}
+    useCanvas: 0
+    typeControlRoot: 0
+    isEqualCountTagsRoot: 0
+    canvasTiplogy: 0
+    keyForFindRoot: 
+  values:
+  - {x: 0, y: 1, z: 0}
+  functionEnum: 0
+  mode: 0
+  time: 0.1
+  timeType: 0
+  velocity: 0
+  isRelative: 1
+  isLoop: 1
+  waitAtEndPath: 0
+  pingPong: 1
+  isInverse: 0
+  isAutoKill: 0
+  curveFactor: 0
+  init: 1
+  useInitValue: 0
+  initValue: {x: 0, y: 0, z: 0}
+  OnCompleteTween:
+    m_PersistentCalls:
+      m_Calls: []
+  space: 0
+  typeTranslation: 0
+  useTransformDestination: 0
+  destination: {fileID: 0}
