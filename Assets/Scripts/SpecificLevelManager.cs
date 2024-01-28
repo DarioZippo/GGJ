@@ -52,7 +52,7 @@ namespace Game
             gameOverPage.SetActive(false);
             videoManager.Stop();
 
-            PearlInvoke.WaitForMethod(0.1f, () => { SceneSystemManager.RepeatScene(); });
+            PearlInvoke.WaitForMethod(0.01f, () => { SceneSystemManager.RepeatScene(); });
         }
 
         protected override void GameOverPrivate()
