@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1647524561081750752}
   - component: {fileID: 475166459890549032}
   - component: {fileID: 2494209607488153681}
+  - component: {fileID: 9123204439888169958}
   m_Layer: 0
   m_Name: Fagiolo_Borlotto
   m_TagString: Bean
@@ -161,3 +162,19 @@ MonoBehaviour:
   typeTranslation: 0
   useTransformDestination: 0
   destination: {fileID: 0}
+--- !u!114 &9123204439888169958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495098133804367234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0a083210f11cb479e03cd9747de03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 6d42e9c0d08fbb84b81bdb79b5d31efc, type: 3}
+  - {fileID: 8300000, guid: 146fdf53a17389f4b9037bfbb1d0a02e, type: 3}
+  - {fileID: 8300000, guid: 78f2a686fe6492845a0c8a87b770b9da, type: 3}

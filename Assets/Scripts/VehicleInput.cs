@@ -35,17 +35,17 @@ namespace Game
 
                 if (acceleration != 0)
                 {
-                    vehicle.Acceleration(acceleration > 0);
+                    vehicle.Acceleration(acceleration);
                 }
 
                 if (acc)
                 {
-                    vehicle.Acceleration(true);
+                    vehicle.Acceleration(1);
                 }
 
                 if (deAcc)
                 {
-                    vehicle.Acceleration(false);
+                    vehicle.Acceleration(-1);
                 }
             }
         }

@@ -16,15 +16,23 @@ namespace Game
         public float currentGas = 0;
 
         private float yPositionInit;
+        public AudioSource audioSource;
 
         // Start is called before the first frame update
         void Start()
         {
             yPositionInit = transform.position.y;
+
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void OnBean(GameObject bean)
         {
+            SoundEffectEvent currentSound = bean.GetComponent<SoundEffectEvent>();
+            AudioClip audioClip = currentSound.GetRandomClip();
+            audioSource.clip = audioClip;
+            audioSource.Play();
+
             GameObject.Destroy(bean);
             currentGas = Math.Min(currentGas + gasForBean, maxGas);
         }

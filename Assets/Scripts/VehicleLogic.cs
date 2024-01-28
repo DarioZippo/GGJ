@@ -17,11 +17,18 @@ namespace Game
         private float horizontal;
         private PlayerStatus status;
 
+        public AudioSource audioSource;
+        public AudioClip burpClip;
+        public AudioClip fartClip;
+
+        bool isPlayingAudio = false;
+
         public void Start()
         {
             body = GetComponent<Rigidbody>();
             velocity = velocityInit;
             status = GetComponent<PlayerStatus>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void Update()
@@ -35,14 +42,34 @@ namespace Game
             horizontal = value;
         }
 
-        public void Acceleration(bool up)
+        public void Acceleration(float acceleration)
         {
             float aux = acceleration * Time.deltaTime;
 
             if (status.currentGas > 0)
             {
-                velocity = up ? velocity + aux : Mathf.Max(velocity - aux, velocityInit);
-                status.OnUse();
+                velocity = acceleration > 0 ? velocity + aux : Mathf.Max(velocity - aux, velocityInit);
+
+                if(acceleration > 0)
+                {
+                    audioSource.clip = fartClip;
+                    audioSource.loop = true;
+
+                    status.OnUse();
+                }
+                else if (acceleration < 0)
+                {
+                    audioSource.clip = burpClip;
+                    audioSource.loop = true;
+
+                    status.OnUse();
+                }
+                else
+                {
+                    audioSource.loop = false;
+                    return;
+                }
+                audioSource.Play();
             }
         }
 
