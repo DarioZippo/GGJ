@@ -41,7 +41,7 @@ namespace Game
 
             if (transform.position.y - yPositionInit < -distanceForGameover)
             {
-                LevelManager.GameOver();
+                SpecificLevelManager.GetSpecificIstance().BoldiScene();
             }
         }
     }

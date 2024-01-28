@@ -1,4 +1,3 @@
-using Pearl;
 using UnityEngine;
 
 namespace Game
@@ -8,7 +7,7 @@ namespace Game
 
         public void Explosion()
         {
-            LevelManager.GameOver();
+            SpecificLevelManager.GetSpecificIstance().ExplosionScene();
         }
 
     }
