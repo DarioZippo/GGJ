@@ -16,6 +16,13 @@ namespace Game
         public GameObject[] models;
         public Dictionary<ModelPG, GameObject> modelsMap;
 
+        private void Awake()
+        {
+
+            InitializeModelMap();
+            LoadPlayer();
+        }
+
         public void InitializeModelMap()
         {
             modelsMap = new Dictionary<ModelPG, GameObject>();

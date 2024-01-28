@@ -16,10 +16,9 @@ namespace Game
         // Start is called before the first frame update
         void Start()
         {
-            /*
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
             veichle = GameObject.FindGameObjectWithTag("Player").GetComponent<VehicleLogic>();
-            */
+
             positionInit = player.position;
         }
 
