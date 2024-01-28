@@ -903,6 +903,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5049550891387699711, guid: 22ff2b46ab74c78428ac3fb074fa7008, type: 3}
+      propertyPath: acceleration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049550891387699711, guid: 22ff2b46ab74c78428ac3fb074fa7008, type: 3}
+      propertyPath: velocityInit
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6037907183542784365, guid: 22ff2b46ab74c78428ac3fb074fa7008, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.54
@@ -1151,8 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roads:
-  - {fileID: 2406488824609725672, guid: 5ba0220c5c6ec654c9c38827a4a146ca, type: 3}
-  - {fileID: 2406488824609725672, guid: 48279c63bdb57824099cfc1c7bc82a8d, type: 3}
+  - {fileID: 2406488824609725672, guid: ec927c869c7a88a459451df99cc4f979, type: 3}
 --- !u!114 &1791900357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,6 +1181,8 @@ MonoBehaviour:
   boundaries:
   - {fileID: 142269762}
   - {fileID: 346630351}
+  gameOverPage: {fileID: 0}
+  videoManager: {fileID: 0}
 --- !u!4 &1791900358
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,63 +1365,6 @@ Transform:
   - {fileID: 346630351}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7244071532550576532
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -21.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3638669414083737519, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495098133804367234, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
-      propertyPath: m_Name
-      value: Fagiolo_Borlotto
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 10486855b7b76ac42b43d55503e530a8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1427,4 +1379,3 @@ SceneRoots:
   - {fileID: 359654263}
   - {fileID: 151833059}
   - {fileID: 2108726383}
-  - {fileID: 7244071532550576532}
