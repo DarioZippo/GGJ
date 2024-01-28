@@ -3,7 +3,12 @@ guid: 71bc84f73e00b3d4796f4e17b7f3e400
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fagiolo_Borlotto
+    second: {fileID: 2100000, guid: 0782b175dec252b4496c5318cccc6d04, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
