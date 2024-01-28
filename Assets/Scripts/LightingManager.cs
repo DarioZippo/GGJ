@@ -15,7 +15,6 @@ public class LightingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //lighting.color = cam.backgroundColor;
         lighting.color = ColorExtend.Complementary(cam.backgroundColor);
     }
 }
