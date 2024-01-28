@@ -6,12 +6,11 @@ namespace Game
 
     public class SpecificGameManager : GameManager
     {
-        public ModelPG modelCurrent;
+        public static ModelPG modelCurrent;
 
-        public void ChangeModel(ModelPG model)
+        public static void ChangeModel(ModelPG model)
         {
             modelCurrent = model;
         }
-
     }
 }
