@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 124349126278743463}
   - component: {fileID: 1517318452229182883}
   - component: {fileID: 7953278314402739242}
+  - component: {fileID: 1685447612209811933}
   m_Layer: 0
   m_Name: Abete_prefab
   m_TagString: Untagged
@@ -55,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.5, y: 15.44, z: 6.5}
-  m_Center: {x: 0, y: 7.57, z: 0}
+  m_Size: {x: 3.6880913, y: 15.44, z: 4.7468967}
+  m_Center: {x: 0.017356873, y: 7.57, z: 0.19961119}
 --- !u!114 &124349126278743463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40b672d906db4d24a8cdc7e91488156c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1685447612209811933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075661024562074330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424e4ced3f50ec542b26a3c6b02163f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7023530787908595025
