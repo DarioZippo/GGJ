@@ -6,8 +6,8 @@ namespace Game
 {
     public class PointerManager : MonoBehaviour
     {
-        public Transform player;
-        public VehicleLogic veichle;
+        private Transform player;
+        private VehicleLogic veichle;
 
         private int point = 0;
         private float auxVelocity;

@@ -16,6 +16,7 @@ namespace Game
         public float currentGas = 0;
 
         private float yPositionInit;
+        private bool exit = false;
         public AudioSource audioSource;
 
         // Start is called before the first frame update
@@ -47,9 +48,10 @@ namespace Game
         {
             PearlEventsManager.CallEvent("OnGas", currentGas / maxGas);
 
-            if (transform.position.y - yPositionInit < -distanceForGameover)
+            if (!exit && transform.position.y - yPositionInit < -distanceForGameover)
             {
                 SpecificLevelManager.GetSpecificIstance().BoldiScene();
+                exit = true;
             }
         }
     }

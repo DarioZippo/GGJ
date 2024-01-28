@@ -25,9 +25,8 @@ namespace Pearl
             this.clips = clips;
             this.speedVideo = 1;
         }
-
-        #endregion
     }
+    #endregion
 
     //Classe che gestisce i video
     public class VideoManager : MonoBehaviour
@@ -175,6 +174,16 @@ namespace Pearl
             if (videoPlayer != null && videoPlayer.targetTexture.IsNotNull(out var targetTexture))
             {
                 targetTexture.Release();
+            }
+        }
+
+        public void VideoPlayStreaming(string videoFileName)
+        {
+            if (videoPlayer != null)
+            {
+                string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
+                videoPlayer.url = videoPath;
+                videoPlayer.Play();
             }
         }
         #endregion

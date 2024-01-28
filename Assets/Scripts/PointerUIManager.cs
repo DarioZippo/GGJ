@@ -8,7 +8,7 @@ namespace Game
     public class PointerUIManager : MonoBehaviour
     {
         public TMP_Text textUI;
-        public Camera cam;
+        private Camera cam;
 
         // Start is called before the first frame update
         void Start()
