@@ -1,6 +1,7 @@
 using Pearl;
 using Pearl.Events;
 using Pearl.Input;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
@@ -10,6 +11,28 @@ namespace Game
         public Transform[] boundaries;
         public GameObject gameOverPage;
         public VideoManager videoManager;
+
+        public GameObject spawnPoint;
+        public GameObject[] models;
+        public Dictionary<ModelPG, GameObject> modelsMap;
+
+        private void Awake()
+        {
+
+            InitializeModelMap();
+            LoadPlayer();
+        }
+
+        public void InitializeModelMap()
+        {
+            modelsMap = new Dictionary<ModelPG, GameObject>();
+
+            modelsMap.Add(ModelPG.Cesso, models[0]);
+            modelsMap.Add(ModelPG.Piano, models[1]);
+            modelsMap.Add(ModelPG.Flipper, models[2]);
+            modelsMap.Add(ModelPG.Scala, models[3]);
+            modelsMap.Add(ModelPG.Tavolo, models[4]);
+        }
 
         public static bool GetIstance(out SpecificLevelManager result)
         {
@@ -70,6 +93,14 @@ namespace Game
         public void ResetBoldi()
         {
             ResetGame();
+        }
+
+        public void LoadPlayer()
+        {
+            ModelPG modelCurrent = SpecificGameManager.modelCurrent;
+
+            GameObject modelPrefabCurrent = modelsMap[modelCurrent];
+            Instantiate(modelPrefabCurrent, spawnPoint.transform);
         }
     }
 }
