@@ -1,9 +1,7 @@
-﻿using Ink.Runtime;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.UI;
 
 namespace Pearl.Input
@@ -91,6 +89,16 @@ namespace Pearl.Input
             if (inputInterface != null)
             {
                 return inputInterface.GetAxis(actionString, raw, mapString, ignoreBlock, filter);
+            }
+            return default;
+        }
+
+        public static float GetAxis(in string actionString, StateButton stateButton, in bool raw = false, in string mapString = "", bool ignoreBlock = false, Func<float, float> filter = null)
+        {
+            var inputInterface = Get(0);
+            if (inputInterface != null)
+            {
+                return inputInterface.GetAxis(actionString, stateButton, raw, mapString, ignoreBlock, filter);
             }
             return default;
         }

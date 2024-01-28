@@ -149,9 +149,13 @@ namespace Pearl
         YellowGreen,
     }
 
+    public enum ColoringMode { Tint, Multiply, Replace, ReplaceKeepAlpha, Add }
+
 
     public static class ColorExtend
     {
+        #region Create Color
+
         public static Color GetColor(ColorEnum color, float alpha = 1)
         {
             byte a = (byte)(byte.MaxValue * Mathf.Clamp01(alpha));
@@ -352,11 +356,14 @@ namespace Pearl
             return color;
         }
 
+        #endregion
+
+        #region HSV
         public static Color SetHUE(this Color colorRGB, float H, in ChangeTypeEnum type)
         {
             Color.RGBToHSV(colorRGB, out var oldH, out var oldS, out var oldV);
 
-            H = type == ChangeTypeEnum.Modify ? oldH + H : H;
+            H = type == ChangeTypeEnum.Modify ? MathfExtend.ChangeInCircle(oldH, H, 1) : H;
             H = Mathf.Clamp01(H);
 
             return Color.HSVToRGB(H, oldS, oldV);
@@ -387,11 +394,12 @@ namespace Pearl
             color.a = alpha;
             return color;
         }
+        #endregion
 
         public static Color Complementary(Color colorRGB)
         {
             Color.RGBToHSV(colorRGB, out var H, out var S, out var V);
-            H = H >= 0.5f ? H - 0.5f : H + 0.5f;
+            H = MathfExtend.ChangeInCircle(H, 0.5f, 1);
             return Color.HSVToRGB(H, S, V);
         }
 
@@ -402,8 +410,6 @@ namespace Pearl
         /// ReplaceKeepAlpha : color is replaced but the original alpha channel is ignored
         /// Add : target color gets added (including its alpha)
         /// </summary>
-        public enum ColoringMode { Tint, Multiply, Replace, ReplaceKeepAlpha, Add }
-
         public static Color Colorize(this Color originalColor, Color targetColor, ColoringMode coloringMode, float lerpAmount = 1.0f)
         {
             Color resultColor = Color.white;
