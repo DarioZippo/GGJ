@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxGas: 10
-  gasForBean: 1
-  gasForUse: 0.01
+  gasForBean: 2.5
+  gasForUse: 0.1
   distanceForGameover: 10
   currentGas: 0
 --- !u!114 &5049550891387699711
@@ -141,8 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b981534751e29ea4e93b41808cf84080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityInit: 20
-  acceleration: 0.1
+  velocityInit: 15
+  velocityUpdate: 0.1
+  acceleration: 0.5
   velocity: 0
 --- !u!114 &2737442897579689569
 MonoBehaviour:

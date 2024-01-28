@@ -5,7 +5,7 @@ namespace Game
 {
     public class VehicleLogic : MonoBehaviour
     {
-        public float velocityInit = 5.0f;
+        public float velocityInit = 15.0f;
         public float velocityUpdate = 0.01f;
 
 
