@@ -388,7 +388,7 @@ namespace Pearl
             return color;
         }
 
-        public static Color GetcCmplementary(Color colorRGB)
+        public static Color Complementary(Color colorRGB)
         {
             Color.RGBToHSV(colorRGB, out var H, out var S, out var V);
             H = H >= 0.5f ? H - 0.5f : H + 0.5f;

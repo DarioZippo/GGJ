@@ -28,8 +28,6 @@ public class SkyboxManager : MonoBehaviour
             color = color.SetHUE(Random.value, ChangeTypeEnum.Setting);
             cam.backgroundColor = color;
 
-            Debug.Log(color);
-
             timer.ResetOn(timeRandom);
         }
     }
