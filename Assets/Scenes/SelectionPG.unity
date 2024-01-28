@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 334233332}
   - component: {fileID: 334233331}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Piano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +394,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 334233332}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308972349}
+        m_TargetAssemblyTypeName: Game.SelectionPage, Game
+        m_MethodName: ChangePiano
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &334233332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +458,7 @@ GameObject:
   - component: {fileID: 376912658}
   - component: {fileID: 376912657}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Tavolo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 376912658}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308972349}
+        m_TargetAssemblyTypeName: Game.SelectionPage, Game
+        m_MethodName: ChangeTavolo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &376912658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,7 +970,7 @@ GameObject:
   - component: {fileID: 921715057}
   - component: {fileID: 921715056}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Flipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,7 +1039,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 921715057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308972349}
+        m_TargetAssemblyTypeName: Game.SelectionPage, Game
+        m_MethodName: ChangeFlipper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &921715057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,7 +1103,7 @@ GameObject:
   - component: {fileID: 1001941490}
   - component: {fileID: 1001941489}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Cesso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,7 +1172,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1001941490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308972349}
+        m_TargetAssemblyTypeName: Game.SelectionPage, Game
+        m_MethodName: ChangeCesso
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1001941490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1545,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 238287051688647823, guid: 1d0410a30f8c5c84f9b7b039365de871, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6816918392310893071, guid: 1d0410a30f8c5c84f9b7b039365de871, type: 3}
@@ -1659,7 +1708,7 @@ GameObject:
   - component: {fileID: 2036696540}
   - component: {fileID: 2036696539}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Scala
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1728,7 +1777,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2036696540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308972349}
+        m_TargetAssemblyTypeName: Game.SelectionPage, Game
+        m_MethodName: ChangeScala
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2036696540
 MonoBehaviour:
   m_ObjectHideFlags: 0

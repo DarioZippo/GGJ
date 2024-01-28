@@ -12,6 +12,5 @@ namespace Game
         {
             modelCurrent = model;
         }
-
     }
 }
