@@ -104,7 +104,7 @@ namespace Pearl
                         CubicBezier.GetDirectionTanForLSmoothCurve(startPointBezier, endPointBezier, out Vector3 directionStartTan, out Vector3 directionEndTan, TypeCurveEnum.Concave);
                         var startTangent = startPointBezier + directionStartTan * deltaY / sizeBezier;
                         var endTangent = endPointBezier + directionEndTan * deltaX / sizeBezier;
-                        Handles.DrawBezier(startPointBezier, endPointBezier, startTangent, endTangent, Color.black, null, 5);
+                        //Handles.DrawBezier(startPointBezier, endPointBezier, startTangent, endTangent, Color.black, null, 5);
                         startPointBezier = endPointBezier;
                         
 
@@ -134,7 +134,7 @@ namespace Pearl
                         CubicBezier.GetDirectionTanForLSmoothCurve(startPointBezier, endPointBezier, out Vector3 directionStartTan, out Vector3 directionEndTan, TypeCurveEnum.Concave);
                         var startTangent = startPointBezier + directionStartTan * deltaX / sizeBezier;
                         var endTangent = endPointBezier + directionEndTan * deltaY / sizeBezier;
-                        Handles.DrawBezier(startPointBezier, endPointBezier, startTangent, endTangent, Color.black, null, 5);
+                        //Handles.DrawBezier(startPointBezier, endPointBezier, startTangent, endTangent, Color.black, null, 5);
                         startPointBezier = endPointBezier;
 
 
