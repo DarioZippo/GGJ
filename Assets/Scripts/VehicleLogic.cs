@@ -6,7 +6,10 @@ namespace Game
     public class VehicleLogic : MonoBehaviour
     {
         public float velocityInit = 5.0f;
-        public float acceleration = 0.1f;
+        public float velocityUpdate = 0.01f;
+
+
+        public float acceleration = 1f;
         [ReadOnly]
         public float velocity;
 
@@ -23,7 +26,8 @@ namespace Game
 
         public void Update()
         {
-            body.velocity = new Vector3(horizontal * velocity / 2, body.velocity.y, velocity);
+            velocityInit += velocityUpdate * Time.deltaTime;
+            body.velocity = new Vector3(horizontal * velocity / 2, body.velocity.y, Mathf.Max(velocity, velocityInit));
         }
 
         public void UpdateControl(float value)
@@ -33,9 +37,11 @@ namespace Game
 
         public void Acceleration(bool up)
         {
+            float aux = acceleration * Time.deltaTime;
+
             if (status.currentGas > 0)
             {
-                velocity = up ? velocity + acceleration : Mathf.Max(velocity - acceleration, 0);
+                velocity = up ? velocity + aux : Mathf.Max(velocity - aux, velocityInit);
                 status.OnUse();
             }
         }

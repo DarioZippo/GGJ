@@ -12,7 +12,6 @@ namespace Game
         void Update()
         {
             float move = InputManager.GetAxis("Movement");
-
             float acceleration = InputManager.GetAxis("Acceleration");
 
             if (vehicle != null)
