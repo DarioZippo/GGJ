@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityInit: 15
-  velocityUpdate: 0.1
-  acceleration: 0.5
+  velocityUpdate: 0.5
+  acceleration: 3
   velocity: 0
   audioSource: {fileID: 0}
   burpClip: {fileID: 8300000, guid: 124b266bb7181114289041e2849cdd41, type: 3}
