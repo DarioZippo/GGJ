@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bean
   - NewRoad
+  - Nanny
   layers:
   - Default
   - TransparentFX

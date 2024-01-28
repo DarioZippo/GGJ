@@ -3,6 +3,7 @@ using Pearl.Events;
 using Pearl.Input;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 namespace Game
 {
@@ -15,6 +16,11 @@ namespace Game
         public GameObject spawnPoint;
         public GameObject[] models;
         public Dictionary<ModelPG, GameObject> modelsMap;
+
+        public VideoClip boldiClip;
+        public VideoClip explosionClip;
+
+        private VideoClip currentClip;
 
         private void Awake()
         {
@@ -81,7 +87,20 @@ namespace Game
         protected override void GameOverPrivate()
         {
             gameOverPage.SetActive(true);
-            videoManager.Play();
+            GameObject.Destroy(GameObject.Find("HUD"));
+            videoManager.SetVideo(currentClip, true);
+        }
+
+        public void BoldiScene()
+        {
+            currentClip = boldiClip;
+            LevelManager.GameOver();
+        }
+
+        public void ExplosionScene()
+        {
+            currentClip = explosionClip;
+            LevelManager.GameOver();
         }
 
         public void NewRoad()

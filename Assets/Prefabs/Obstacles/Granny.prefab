@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7476847940325516728}
   - component: {fileID: 1219909381749248374}
   - component: {fileID: 8260770375956747882}
+  - component: {fileID: -41737124624768617}
+  - component: {fileID: 601711052985878094}
+  - component: {fileID: 3551290906910710277}
   m_Layer: 7
   m_Name: Granny
   m_TagString: Untagged
@@ -68,6 +71,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &-41737124624768617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638411867336057519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c6e81a24c5526b4a95cc964dae768b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderResponseManager: {fileID: 601711052985878094}
+  forFastObjects: 0
+  disable: 0
+  checkDisable: 0
+  minVelocity: 2
+  _myCollider: {fileID: 0}
+--- !u!114 &601711052985878094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638411867336057519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c200d5f130d10f488d18dfa100e529e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterActions:
+    m_keys:
+    - Player
+    m_values:
+    - stringType: 3
+      once: 0
+      isWait: 0
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 3551290906910710277}
+            m_TargetAssemblyTypeName: Game.GameoverExplosion, Game
+            m_MethodName: Explosion
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  exitActions:
+    m_keys: []
+    m_values: []
+  stayActions:
+    m_keys: []
+    m_values: []
+--- !u!114 &3551290906910710277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638411867336057519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b672d906db4d24a8cdc7e91488156c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2069354905294921945
 PrefabInstance:
   m_ObjectHideFlags: 0
