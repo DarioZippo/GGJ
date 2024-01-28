@@ -27,26 +27,24 @@ namespace Game
         void Update()
         {
             float move = InputManager.GetAxis("Movement");
-            float acceleration = InputManager.GetAxis("Acceleration");
 
             if (vehicle != null)
             {
                 vehicle.UpdateControl(move);
 
-                if (acceleration != 0)
-                {
-                    vehicle.Acceleration(acceleration);
-                }
-
                 if (acc)
                 {
                     vehicle.Acceleration(1);
                 }
-
-                if (deAcc)
+                else if (deAcc)
                 {
                     vehicle.Acceleration(-1);
                 }
+                else
+                {
+                    vehicle.Acceleration(0);
+                }
+
             }
         }
 

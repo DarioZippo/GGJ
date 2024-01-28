@@ -52,25 +52,48 @@ namespace Game
 
                 if(acceleration > 0)
                 {
-                    audioSource.clip = fartClip;
-                    audioSource.loop = true;
-
+                    /*
+                    if (!isPlayingAudio)
+                    {
+                        audioSource.clip = fartClip;
+                        isPlayingAudio = true;
+                    }
+                    */
                     status.OnUse();
                 }
                 else if (acceleration < 0)
                 {
-                    audioSource.clip = burpClip;
-                    audioSource.loop = true;
-
+                    /*
+                    if (!isPlayingAudio)
+                    {
+                        audioSource.clip = burpClip;
+                        isPlayingAudio = true;
+                    }
+                    */
                     status.OnUse();
                 }
+                /*
                 else
                 {
                     audioSource.loop = false;
-                    return;
+                    isPlayingAudio = false;
                 }
-                audioSource.Play();
+
+                if (audioSource.loop == false && isPlayingAudio)
+                {
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
+                else if(audioSource.loop == false && isPlayingAudio == false)
+                {
+                    audioSource.Stop();
+                }
+                */
             }
+            /*
+            audioSource.loop = false;
+            isPlayingAudio = false;
+            */
         }
 
     }

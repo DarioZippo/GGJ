@@ -131,6 +131,7 @@ MonoBehaviour:
   gasForUse: 0.1
   distanceForGameover: 10
   currentGas: 0
+  audioSource: {fileID: 0}
 --- !u!114 &5049550891387699711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +148,9 @@ MonoBehaviour:
   velocityUpdate: 0.1
   acceleration: 0.5
   velocity: 0
+  audioSource: {fileID: 0}
+  burpClip: {fileID: 8300000, guid: 124b266bb7181114289041e2849cdd41, type: 3}
+  fartClip: {fileID: 8300000, guid: 78745a1e0da471d488d7e60938d879cd, type: 3}
 --- !u!114 &2737442897579689569
 MonoBehaviour:
   m_ObjectHideFlags: 0
