@@ -823,12 +823,21 @@
                 },
                 {
                     "name": "Acceleration",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "b0a75c54-4413-4d1b-aeb8-e7b0ae1159e4",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DeAcceleration",
+                    "type": "Button",
+                    "id": "9cd582fa-d861-4c9f-bc0f-62b81708b2c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -866,37 +875,59 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "127a3439-7a6e-4230-a926-b5a3981c991f",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "51872521-41fc-475f-9319-c1472cad5477",
+                    "path": "<Gamepad>/leftStick/x",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Acceleration",
-                    "isComposite": true,
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "9f4e7a6e-c25c-46ed-b236-f928f24d6c6a",
-                    "path": "<Keyboard>/a",
+                    "name": "",
+                    "id": "fdb918ff-4f4d-4006-9171-12366fc5e279",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "Gamepad",
                     "action": "Acceleration",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "positive",
-                    "id": "07ed1e73-67ab-4fd0-b253-98766db4aa95",
+                    "name": "",
+                    "id": "f26b2c7d-947d-41d3-bb7a-aa7e624bc4fd",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Acceleration",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0b2c52d3-38c5-475f-8a15-2ba962a4e5cc",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "DeAcceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6802414c-a35e-4b23-a722-b5cd7e2575e9",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "DeAcceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
