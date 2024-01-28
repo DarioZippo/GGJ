@@ -25,7 +25,10 @@ namespace Game
 
         void Update()
         {
-            image.color = ColorExtend.Complementary(cam.backgroundColor);
+            if (cam != null)
+            {
+                image.color = ColorExtend.Complementary(cam.backgroundColor);
+            }
         }
 
 

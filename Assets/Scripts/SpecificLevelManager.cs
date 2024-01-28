@@ -1,24 +1,16 @@
-using UnityEngine;
 using Pearl;
-using Pearl.Input;
-using Pearl.Debugging;
 using Pearl.Events;
+using Pearl.Input;
+using UnityEngine;
 
 namespace Game
 {
     public class SpecificLevelManager : LevelManager
     {
         public Transform[] boundaries;
-        /*int roadCounter = 0;
+        public GameObject gameOverPage;
+        public VideoManager videoManager;
 
-        void Awake(){
-            PearlEventsManager.AddAction("OnRoadsUpdate", OnRoadsUpdate);
-        }
-
-        void OnDisable(){
-            PearlEventsManager.RemoveAction("OnRoadsUpdate", OnRoadsUpdate);
-        }
-        */
         public static bool GetIstance(out SpecificLevelManager result)
         {
             return Singleton<SpecificLevelManager>.GetIstance(out result);
@@ -57,25 +49,27 @@ namespace Game
 
         protected override void ResetGamePrivate()
         {
+            gameOverPage.SetActive(false);
+            videoManager.Stop();
+
+            PearlInvoke.WaitForMethod(0.1f, () => { SceneSystemManager.RepeatScene(); });
         }
 
         protected override void GameOverPrivate()
         {
+            gameOverPage.SetActive(true);
+            videoManager.Play();
         }
-        /*
-        public void OnRoadsUpdate(){
-            Debug.Log("Counter aggiornato: " + roadCounter);
-            roadCounter++;
-        }
-        */
-        public void NewRoad(){
+
+        public void NewRoad()
+        {
             Debug.Log("Triggered");
             PearlEventsManager.CallEvent("OnNewRoad", PearlEventType.Trigger);
         }
-        /*
-        public int GetRoadsCounter(){
-            return roadCounter;
+
+        public void ResetBoldi()
+        {
+            ResetGame();
         }
-        */
     }
 }

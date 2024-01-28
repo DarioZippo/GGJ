@@ -365,6 +365,11 @@ namespace Pearl
             return ChangeInCircle(value, delta, 0, maxExclusive);
         }
 
+        public static float ChangeInCircle(float value, float delta)
+        {
+            return ChangeInCircle(value, delta, 0f, 1f);
+        }
+
         public static bool ContainsInCircle(float value, float min, float max)
         {
             return (min <= max && (value >= min && value <= max)) ||

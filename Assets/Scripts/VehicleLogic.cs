@@ -6,7 +6,6 @@ namespace Game
     public class VehicleLogic : MonoBehaviour
     {
         public float velocityInit = 5.0f;
-        public float multiplyHorizontal = 2.0f;
         public float acceleration = 0.1f;
         [ReadOnly]
         public float velocity;
@@ -24,7 +23,7 @@ namespace Game
 
         public void Update()
         {
-            body.velocity = new Vector3(horizontal * multiplyHorizontal, body.velocity.y, velocity);
+            body.velocity = new Vector3(horizontal * velocity / 2, body.velocity.y, velocity);
         }
 
         public void UpdateControl(float value)

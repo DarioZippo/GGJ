@@ -10,14 +10,17 @@ namespace Game
         public float maxGas = 10;
         public float gasForBean = 1;
         public float gasForUse = 0.01f;
+        public float distanceForGameover = 10f;
 
         [ReadOnly]
         public float currentGas = 0;
 
+        private float yPositionInit;
+
         // Start is called before the first frame update
         void Start()
         {
-
+            yPositionInit = transform.position.y;
         }
 
         public void OnBean(GameObject bean)
@@ -35,6 +38,11 @@ namespace Game
         void Update()
         {
             PearlEventsManager.CallEvent("OnGas", currentGas / maxGas);
+
+            if (transform.position.y - yPositionInit < -distanceForGameover)
+            {
+                LevelManager.GameOver();
+            }
         }
     }
 }

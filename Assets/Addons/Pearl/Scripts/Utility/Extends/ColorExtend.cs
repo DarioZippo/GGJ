@@ -363,7 +363,7 @@ namespace Pearl
         {
             Color.RGBToHSV(colorRGB, out var oldH, out var oldS, out var oldV);
 
-            H = type == ChangeTypeEnum.Modify ? MathfExtend.ChangeInCircle(oldH, H, 1) : H;
+            H = type == ChangeTypeEnum.Modify ? MathfExtend.ChangeInCircle(oldH, H) : H;
             H = Mathf.Clamp01(H);
 
             return Color.HSVToRGB(H, oldS, oldV);
@@ -399,7 +399,7 @@ namespace Pearl
         public static Color Complementary(Color colorRGB)
         {
             Color.RGBToHSV(colorRGB, out var H, out var S, out var V);
-            H = MathfExtend.ChangeInCircle(H, 0.5f, 1);
+            H = MathfExtend.ChangeInCircle(H, 0.5f);
             return Color.HSVToRGB(H, S, V);
         }
 
