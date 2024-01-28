@@ -539,7 +539,7 @@ MonoBehaviour:
   - {fileID: 8047365674167947764, guid: f8c3a1381457ee14db5b63275cc3d08f, type: 3}
   - {fileID: 8047365674167947764, guid: a701762767e7608469e1a17294ba99b0, type: 3}
   boldiClip: {fileID: 32900000, guid: cd2e03e9b8d97584cbfed286e5dbd298, type: 3}
-  explosionClip: {fileID: 32900000, guid: f724b0b93c5a34d4c9da108d79a94c27, type: 3}
+  explosionClip: {fileID: 32900000, guid: 52671d78120b37f499ee322215497ba3, type: 3}
 --- !u!114 &545787146
 MonoBehaviour:
   m_ObjectHideFlags: 0
