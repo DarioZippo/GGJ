@@ -8,7 +8,7 @@ namespace Game
     public class GasBarManager : MonoBehaviour
     {
         public Image image;
-        public Camera cam;
+        private Camera cam;
 
         // Start is called before the first frame update
         void Start()

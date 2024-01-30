@@ -17,10 +17,10 @@ namespace Game
         public GameObject[] models;
         public Dictionary<ModelPG, GameObject> modelsMap;
 
-        public VideoClip boldiClip;
-        public VideoClip explosionClip;
+        public string boldiClip;
+        public string explosionClip;
 
-        private VideoClip currentClip;
+        private string currentClip;
 
         private void Awake()
         {
@@ -88,7 +88,7 @@ namespace Game
         {
             gameOverPage.SetActive(true);
             GameObject.Destroy(GameObject.Find("HUD"));
-            videoManager.SetVideo(currentClip, true);
+            videoManager.VideoPlayStreaming(currentClip);
         }
 
         public void BoldiScene()
@@ -105,11 +105,10 @@ namespace Game
 
         public void NewRoad()
         {
-            Debug.Log("Triggered");
             PearlEventsManager.CallEvent("OnNewRoad", PearlEventType.Trigger);
         }
 
-        public void ResetBoldi()
+        public void ResetSpecificGame()
         {
             ResetGame();
         }
