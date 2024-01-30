@@ -1,5 +1,7 @@
-﻿using Pearl;
+﻿using NodeCanvas.Tasks.Conditions;
+using Pearl;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Game
 {
@@ -9,7 +11,6 @@ namespace Game
         public float velocityUpdate = 0.01f;
 
 
-        public float acceleration = 1f;
         [ReadOnly]
         public float velocity;
 
@@ -17,7 +18,7 @@ namespace Game
         private float horizontal;
         private PlayerStatus status;
 
-        public AudioSource audioSource;
+        public AudioSource turboAudioSource;
         public AudioClip burpClip;
         public AudioClip fartClip;
 
@@ -28,7 +29,6 @@ namespace Game
             body = GetComponent<Rigidbody>();
             velocity = velocityInit;
             status = GetComponent<PlayerStatus>();
-            audioSource = GetComponent<AudioSource>();
         }
 
         public void Update()
@@ -52,48 +52,33 @@ namespace Game
 
                 if(acceleration > 0)
                 {
-                    /*
-                    if (!isPlayingAudio)
-                    {
-                        audioSource.clip = fartClip;
+                    if(!isPlayingAudio) {
+                        turboAudioSource.clip = fartClip;
+                        turboAudioSource.Play();
                         isPlayingAudio = true;
                     }
-                    */
+
                     status.OnUse();
                 }
                 else if (acceleration < 0)
                 {
-                    /*
-                    if (!isPlayingAudio)
-                    {
-                        audioSource.clip = burpClip;
+                    if(!isPlayingAudio) {
+                        turboAudioSource.clip = burpClip;
+                        turboAudioSource.Play();
                         isPlayingAudio = true;
                     }
-                    */
+
                     status.OnUse();
                 }
-                /*
-                else
-                {
-                    audioSource.loop = false;
+                else {
+                    turboAudioSource.Stop();
                     isPlayingAudio = false;
                 }
-
-                if (audioSource.loop == false && isPlayingAudio)
-                {
-                    audioSource.loop = true;
-                    audioSource.Play();
-                }
-                else if(audioSource.loop == false && isPlayingAudio == false)
-                {
-                    audioSource.Stop();
-                }
-                */
             }
-            /*
-            audioSource.loop = false;
-            isPlayingAudio = false;
-            */
+            else {
+                turboAudioSource.Stop();
+                isPlayingAudio = false;
+            }
         }
 
     }

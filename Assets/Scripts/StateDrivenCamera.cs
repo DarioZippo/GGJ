@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FollowPlayer : MonoBehaviour
+public class StateDrivenCamera : MonoBehaviour
 {
     public GameObject player;
     public CinemachineVirtualCamera vcam;

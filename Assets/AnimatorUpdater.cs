@@ -1,28 +1,17 @@
-using Cinemachine;
 using Pearl.Input;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class FollowPlayer : MonoBehaviour
+public class AnimatorUpdater : MonoBehaviour
 {
-    public GameObject player;
-    public CinemachineVirtualCamera vcam;
+    public Animator animator;
 
-    void Start()
-    {
+    private void Start() {
+        animator = GetComponent<Animator>();
+
         InputManager.PerformedHandle("Acceleration", AccelerationDown, AccelerationUp, Pearl.ActionEvent.Add);
         InputManager.PerformedHandle("DeAcceleration", DeaccelerationDown, DeaccelerationUp, Pearl.ActionEvent.Add);
-
-        var vcam = GetComponent<CinemachineVirtualCamera>();
-
-        if (player == null)
-        {
-            player = GameObject.FindWithTag("Player");
-        }
-        Transform target = player.transform;
-        vcam.Follow = target;
     }
 
     private void OnDestroy() {
@@ -31,18 +20,18 @@ public class FollowPlayer : MonoBehaviour
     }
 
     private void AccelerationDown() {
-        //vcam.
+        animator.SetBool("Turbo", true);
     }
 
     private void AccelerationUp() {
-        //acc = false;
+        animator.SetBool("Turbo", false);
     }
 
     private void DeaccelerationDown() {
-        //deAcc = true;
+        animator.SetBool("Break", true);
     }
 
     private void DeaccelerationUp() {
-        //deAcc = false;
+        animator.SetBool("Break", false);
     }
 }
